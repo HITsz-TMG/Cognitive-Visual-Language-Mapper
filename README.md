@@ -15,6 +15,8 @@ We have also provided the JSON file for the 504K [KonwledgeQA dataset.](https://
 ## Environment
 - Pytorch `2.0.1`
 ```shell
+conda env create -n CVLM python=3.8
+conda activate CVLM
 pip install -r requirement.txt
 ```
 ## Train
