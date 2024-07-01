@@ -170,6 +170,8 @@ bash scripts/knowledge_qa/eval/seedbench.sh
 
 The Qwen model is evaluated using the same datasets as the LLaVA model.
 
+Before you evaluate the Qwen-VL model, you need to download the Qwen-VL model from [Qwen-VL](https://github.com/QwenLM/Qwen-VL) and use the two Python files under [path](Qwen/Qwen_VL/) to replace the original files.
+
 #### OK-VQA
 
 ```shell
