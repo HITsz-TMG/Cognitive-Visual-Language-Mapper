@@ -9,8 +9,8 @@ args = parser.parse_args()
 pred_path = args.pred_file
 # pred_path = "/data/cxy/Knowledge_LLaVA/playground/knowledge_qa/eval/infoseek/answers/llava_infoseek_val/llava_7b_attention_opt_knowledge_qa/1epoch.jsonl"
 # pred_path = "/data/cxy/Knowledge_LLaVA/playground/knowledge_qa/eval/infoseek/answers/llava_infoseek_val/llava_7b_knowledge_qa_baseline_r/llava_7b_knowledge_qa_baseline_r.jsonl"
-prediction_data = [json.loads(p) for p in open(pred_path, "r")]
-# prediction_data = json.load(open(pred_path))
+# prediction_data = [json.loads(p) for p in open(pred_path, "r")]
+prediction_data = json.load(open(pred_path))
 
 golden_path = "/data/cxy/Knowledge_LLaVA/playground/knowledge_qa/eval/infoseek/llava_infoseek_val.jsonl"
 golden = [json.loads(p) for p in open(golden_path, "r")]
