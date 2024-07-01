@@ -28,7 +28,7 @@ ds_collections = {
         'max_new_tokens': 10,
     },
     'aokvqa': {
-        'train': '',
+        'train': 'data/aokvqa/qwen_aokvqa_openended_val.jsonl',
         'test': 'data/aokvqa/qwen_aokvqa_openended_val.jsonl',
         'max_new_tokens': 10
     },

@@ -175,42 +175,42 @@ Before you evaluate the Qwen-VL model, you need to download the Qwen-VL model fr
 #### OK-VQA
 
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset okvqa
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset okvqa --few-shot 0
 ```
 
 #### VQAv2
 
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset vqav2
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset vqav2 --few-shot 0
 ```
 
 #### A-OKVQA
 
 Evaluation on open-ended A-OKVQA.
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset aokvqa
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset aokvqa --few-shot 0
 ```
 
 Evaluation on multi-choices A-OKVQA.
 
 ```shell
-python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset aokvqa
+python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset aokvqa --few-shot 0
 ```
 
 #### TextVQA
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset textvqa
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset textvqa --few-shot 0
 ```
 
 #### InfoSeek
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset infoseek
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset infoseek --few-shot 0
 ```
 
 #### SeedBench
 
 ```shell
-python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset seedbench
+python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset seedbench --few-shot 0
 ```
 
 ## Citation
