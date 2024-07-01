@@ -105,6 +105,13 @@ The evaluation scripts of LLaVA are on `scripts/knowledge_qa/eval`,
 
 We mainly evaluated on six benchmark datasets: OK-VQA, VQAv2, A-OKVQA, TextVQA, InfoSeek, and SEED-Bench.
 
+**Before your evalutaion, you should unzip the sam images.
+
+```shell
+cd LLaVA\playground\knowledge_qa\sam
+tar -xzvf images_all.tar.gz
+```
+
 #### OK-VQA
 It is important to note that the saved result files will be in the answers_upload folder within the corresponding directory.
 ```shell
@@ -205,7 +212,7 @@ seedbench
 If you find our paper and code useful in your research, please consider giving a star and citation
 
 ```BibTex
-@article{CVLM
+@article{li2024cvlm,
 author = {Yunxin Li, Xinyu Chen, Baotian Hu, Haoyuan Shi and Min Zhang},
 title = {Cognitive Visual-Language Mapper: Advancing Multimodal Comprehension with Enhanced Visual Knowledge Alignment},
 journal={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics},
