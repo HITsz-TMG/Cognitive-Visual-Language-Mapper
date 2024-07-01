@@ -6,7 +6,7 @@ SPLIT="llava_aokvqa_openended_val"
 
 python -m llava.eval.model_vqa_loader \
       --model-base lmsys/vicuna-7b-v1.5 \
-      --model-path /checkpoints/$CKPT/checkpoint-$STEP \
+      --model-path checkpoints/$CKPT/checkpoint-$STEP \
       --question-file ./playground/knowledge_qa/eval/aokvqa/$SPLIT.jsonl \
       --image-folder / \
       --answers-file ./playground/knowledge_qa/eval/aokvqa/answers/$SPLIT/$CKPT/$STEP.jsonl \

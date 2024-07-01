@@ -18,8 +18,7 @@ import warnings
 import shutil
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig, BitsAndBytesConfig
-from llava.model.language_model.llava_llama import KnowledgeLlavaLlamaForCausalLM, KnowledgeOPTLlavaLlamaForCausalLM, KnowledgeLlavaConfig, KnowledgeOPTAttentionLlavaLlamaForCausalLM, KnowledgeSAMOPTAttentionLlavaLlamaForCausalLM, \
-                                                    KnowledgeSAMOPTQueryAttentionLlavaLlamaForCausalLM, KnowledgeOPTQformerLlavaLlamaForCausalLM
+from llava.model.language_model.llava_llama import KnowledgeLlavaLlamaForCausalLM, KnowledgeOPTLlavaLlamaForCausalLM, KnowledgeLlavaConfig, KnowledgeOPTQformerLlavaLlamaForCausalLM
 import torch
 from llava.model import *
 from llava.constants import DEFAULT_IMAGE_PATCH_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, DEFAULT_KNOWLEDGE_QUERY_TOKEN
@@ -45,7 +44,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
         kwargs['torch_dtype'] = torch.float16
         
     
-    if "fka" in model_path.lower():
+    if "fka" in model_path.lower() or "cvlm-llava" in model_path.lower():
         tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=False)
         llava_config = KnowledgeLlavaConfig.from_pretrained("liuhaotian/llava-v1.5-7b")
         model =  KnowledgeOPTQformerLlavaLlamaForCausalLM.from_pretrained(model_base, torch_dtype=torch.float16, low_cpu_mem_usage=True,
