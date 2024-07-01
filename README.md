@@ -12,17 +12,18 @@ You can place the JSON file in the LLaVA/playground/knowledge_data directory if 
 We have also provided the JSON file for the 504K [KonwledgeQA dataset.](https://huggingface.co/datasets/Ghaser/LLaVA-KnowledgeQA-504K). The images in this dataset come from [COCO Caption](https://cocodataset.org/#home) and [TextVQA](https://textvqa.org/), which you will need to download yourself.
 
 
-## Environment
+## :mag: Environment
 - Pytorch `2.0.1`
 ```shell
 conda env create -n CVLM python=3.8
 conda activate CVLM
 pip install -r requirement.txt
 ```
-## Train
+## :racehorse: Train
+
 ### Pretraining Visual Knowledge Aligner
 
-After you have successfully downloaded the Wikipedia files and placed them in the appropriate path, you can use the following code to perform VKA pretraining.
+After you have successfully downloaded the Wikipedia files and placed them in the appropriate path, you could use the following code to perform VKA pretraining.
 
 ```shell
 cd LLaVA
@@ -31,7 +32,7 @@ bash scripts/decoder_model/pretrain_knowledge.sh
 ```
 
 
-### LLaVA
+### :one: LLaVA
 
 #### Training Visual Knowledge Aligner with LLMs
 
@@ -65,7 +66,7 @@ bash scripts/knowledge_qa/llava_fka_qa_stage2.sh
 
 It is important to note that during each stage of training, the parameters from the previous stage need to be accessed via the `pretrain_knowledge_params_path`. And the parameters should be extraxted by [code](LLaVA/checkpoints/scripts/get_non_lora_trainables.py).
 
-### Qwen-VL
+### :two: Qwen-VL
 
 #### Training Visual Knowledge Aligner with LLMs
 
@@ -82,7 +83,7 @@ bash finetune/pretrain_ds.sh
 bash finetune/finetune_lora_ds.sh
 ```
 
-## Evaluation
+## :large_orange_diamond: Evaluation
 
 We released the best model based on LLaVA on [CVLM-LLaVA](https://huggingface.co/Ghaser/CVLM-LLaVA) and the best model based on QWen-VL on [CVLM-Qwen](https://huggingface.co/Ghaser/CVLM-Qwen)
 
@@ -99,7 +100,7 @@ After downloading checkpoints, organize the weights as follows.
             ├──qwen-vka
 ```
 
-### LLaVA
+### :one: LLaVA
 
 The evaluation scripts of LLaVA are on `scripts/knowledge_qa/eval`,
 
@@ -162,7 +163,7 @@ Evaluation on SEED-Bench
 bash scripts/knowledge_qa/eval/seedbench.sh
 ```
 
-# Qwen
+### :two: Qwen
 
 The Qwen model is evaluated using the same datasets as the LLaVA model.
 
