@@ -7,9 +7,7 @@
 
 We released two million Wikipedia Knowledge Datasets in [Wikipedia-Knowledge-2M](https://huggingface.co/datasets/Ghaser/Wikipedia-Knowledge-2M). The dataset includes a JSON file and a compressed archive containing all the image files. The JSON file's image attributes correspond to the compressed archive's image files.
 
-You can place the JSON file in the LLaVA/playground/knowledge_data directory if you need to use our training code below.
-
-We have also provided the JSON file for the 504K [KonwledgeQA dataset.](https://huggingface.co/datasets/Ghaser/LLaVA-KnowledgeQA-504K). The images in this dataset come from [COCO Caption](https://cocodataset.org/#home) and [TextVQA](https://textvqa.org/), which you will need to download yourself.
+We have also provided the JSON file for the 504K KonwledgeQA dataset in [LLaVA-KnowledgeQA-504K](https://huggingface.co/datasets/Ghaser/LLaVA-KnowledgeQA-504K). The dataset mainly consists of the training sets from OK-VQA, TextVQA, A-OKVQA, and TextVQA. The images in this dataset come from [COCO Caption](https://cocodataset.org/#home) and [TextVQA](https://textvqa.org/), which you will need to download yourself.
 
 
 ## :mag: Environment
@@ -23,7 +21,10 @@ pip install -r requirement.txt
 
 ### Pretraining Visual Knowledge Aligner
 
-After you have successfully downloaded the Wikipedia files and placed them in the appropriate path, you could use the following code to perform VKA pretraining.
+<!-- After you have successfully downloaded the Wikipedia files and placed them in the appropriate path, you could use the following code to perform VKA pretraining. -->
+Before you start the pretraining for the visual knowledge aligner, you should place the downloaded `Wikipedia-Knowledge-2M` dataset in LLaVA/playground/knowledge_data directory.
+
+Then you can use the following scripts for pretraining.
 
 ```shell
 cd LLaVA
@@ -36,19 +37,21 @@ bash scripts/decoder_model/pretrain_knowledge.sh
 
 #### Training Visual Knowledge Aligner with LLMs
 
+Replace `pretrain_opt_adapter` with the save path of your pretrained VKA.
+
 ``` shell
 bash scripts/knowledge/pretrain.sh
 ```
 
-You can use the [code](LLaVA/checkpoints/scripts/get_train_checkpoints.py) to extract trainable parameters from the saved checkpoints file and store them for use as input in the next stage of training.
+You should use the [code](LLaVA/checkpoints/scripts/get_train_checkpoints.py) to extract trainable parameters from the saved checkpoints file and store them as inputs in the next stage of training.
 
 #### Fine-tune VKA on the Question Answering task
+Change the attribute `pretrain_knowledge_params_path` to the path where the parameters extracted in the previous stage are stored.
 
 ``` shell
 bash scripts/knowledge_qa/llava_vka_qa.sh
 ```
 
-Change the `pretrain_knowledge_params_path` to the path where the parameters extracted in the previous stage are stored.
 
 Besides, after completing the training, you can use the [code](LLaVA/checkpoints/scripts/get_non_lora_trainables.py) to extract both trainable non-LoRA parameters and LoRA parameters from the checkpoints.
 
@@ -64,7 +67,7 @@ bash scripts/knowledge_qa/llava_fka_qa.sh
 bash scripts/knowledge_qa/llava_fka_qa_stage2.sh
 ```
 
-It is important to note that during each stage of training, the parameters from the previous stage need to be accessed via the `pretrain_knowledge_params_path`. And the parameters should be extraxted by [code](LLaVA/checkpoints/scripts/get_non_lora_trainables.py).
+It is important to note that during each stage of training, the parameters from the previous stage need to be accessed via attribute `pretrain_knowledge_params_path`, and the parameters should be extraxted by [code](LLaVA/checkpoints/scripts/get_non_lora_trainables.py).
 
 ### :two: Qwen-VL
 
@@ -137,7 +140,7 @@ Evaluation on open-ended A-OKVQA. The following scripts will also perform the ev
 bash scripts/knowledge_qa/eval/aokvqa_oe.sh
 ```
 
-Evaluation on multi-choices A-OKVQA
+Evaluation on multi-choices A-OKVQA.
 
 ```shell
 bash scripts/knowledge_qa/eval/aokvqa.sh
@@ -158,7 +161,7 @@ bash scripts/knowledge_qa/eval/infoseek.sh
 
 #### SEED-Bench
 
-Evaluation on SEED-Bench
+Evaluation on SEED-Bench.
 ```shell
 bash scripts/knowledge_qa/eval/seedbench.sh
 ```
@@ -205,8 +208,7 @@ python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain 
 #### SeedBench
 
 ```shell
-python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset 
-seedbench
+python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset seedbench
 ```
 
 ## Citation
