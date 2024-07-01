@@ -9,7 +9,7 @@ We released two millions Wikipedia Knowledge Dataset in [Wikipedia-Knowledge-2M]
 
 If you need to use our training code below, you can place the JSON file in the LLaVA/playground/knowledge_data directory.
 
-We have also provided the JSON file for the 504K [KonwledgeQA dataset.](https://huggingface.co/datasets/Ghaser/LLaVA-KnowledgeQA-504K). The images in this dataset come from COCO Caption and TextVQA, which you will need to download yourself.
+We have also provided the JSON file for the 504K [KonwledgeQA dataset.](https://huggingface.co/datasets/Ghaser/LLaVA-KnowledgeQA-504K). The images in this dataset come from [COCO Caption](https://cocodataset.org/#home) and [TextVQA](https://textvqa.org/), which you will need to download yourself.
 
 
 ## Environment
@@ -86,6 +86,19 @@ bash finetune/finetune_lora_ds.sh
 
 We released the best model based on LLaVA on [CVLM-LLaVA](https://huggingface.co/Ghaser/CVLM-LLaVA) and best model based on QWen-VL on [CVLM-Qwen](https://huggingface.co/Ghaser/CVLM-Qwen)
 
+After downloading checkpoints, organize the weights as follow.
+
+```
+└── LLaVA
+    ├──checkpoints
+        ├──CVLM-LLaVA
+└── Qwen
+    ├──checkpoints
+        ├──CVLM-Qwen
+            ├──qwen-pretrain
+            ├──qwen-vka
+```
+
 ### LLaVA
 
 The evaluation scripts of LLaVA are on `scripts/knowledge_qa/eval`,
@@ -149,42 +162,42 @@ The Qwen model is evaluated using the same datasets as the LLaVA model.
 #### OK-VQA
 
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/qwen-pretrain --adapter checkpoints/qwen-vka-stage2 --dataset okvqa
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset okvqa
 ```
 
 #### VQAv2
 
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/qwen-pretrain --adapter checkpoints/qwen-vka-stage2 --dataset vqav2
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset vqav2
 ```
 
 #### A-OKVQA
 
 Evaluation on open-ended A-OKVQA.
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/qwen-pretrain --adapter checkpoints/qwen-vka-stage2 --dataset aokvqa
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset aokvqa
 ```
 
 Evaluation on multi-choices A-OKVQA.
 
 ```shell
-python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/qwen-pretrain --adapter checkpoints/qwen-vka-stage2 --dataset aokvqa
+python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset aokvqa
 ```
 
 #### TextVQA
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/qwen-pretrain --adapter checkpoints/qwen-vka-stage2 --dataset textvqa
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset textvqa
 ```
 
 #### InfoSeek
 ```shell
-python eval_mm/evaluate_vqa.py --checkpoint checkpoints/qwen-pretrain --adapter checkpoints/qwen-vka-stage2 --dataset infoseek
+python eval_mm/evaluate_vqa.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset infoseek
 ```
 
 #### SeedBench
 
 ```shell
-python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/qwen-pretrain --adapter checkpoints/qwen-vka-stage2 --dataset 
+python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CVLM-Qwen/qwen-pretrain --adapter checkpoints/CVLM-Qwen/qwen-vka --dataset 
 seedbench
 ```
 
