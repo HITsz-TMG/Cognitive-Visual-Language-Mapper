@@ -217,11 +217,11 @@ python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CV
 If you find our paper and code useful in your research, please consider giving a star and citation
 
 ```BibTex
-@article{li2024cvlm,
-author = {Yunxin Li, Xinyu Chen, Baotian Hu, Haoyuan Shi and Min Zhang},
-title = {Cognitive Visual-Language Mapper: Advancing Multimodal Comprehension with Enhanced Visual Knowledge Alignment},
-journal={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics},
-year = {2024},
+@article{li2024cognitive,
+  title={Cognitive Visual-Language Mapper: Advancing Multimodal Comprehension with Enhanced Visual Knowledge Alignment},
+  author={Li, Yunxin and Chen, Xinyu and Hu, Baotian and Shi, Haoyuan and Zhang, Min},
+  journal={arXiv preprint arXiv:2402.13561},
+  year={2024}
 }
 ```
 
