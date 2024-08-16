@@ -33,7 +33,7 @@ class LlavaConfig(LlamaConfig):
 
 class KnowledgeLlavaConfig(LlamaConfig):
     model_type = "llava"
-    def __init__(self, opt_model_path="/data/share/Model/opt-1.3b", opt_hidden_size=2048,  **kwargs):
+    def __init__(self, opt_model_path="facebook/opt-1.3b", opt_hidden_size=2048,  **kwargs):
         super().__init__(**kwargs,)
         self.opt_model_path = opt_model_path
         self.opt_hidden_size = opt_hidden_size
