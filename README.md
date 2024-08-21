@@ -88,6 +88,8 @@ bash finetune/finetune_lora_ds.sh
 
 ## :large_orange_diamond: Evaluation
 
+The sam_images on GitHub are incomplete; you need to re-download them from [Hugging Face](https://huggingface.co/datasets/Ghaser/CVLM-SAM-Images).
+
 We released the best model based on LLaVA on [CVLM-LLaVA](https://huggingface.co/Ghaser/CVLM-LLaVA) and the best model based on QWen-VL on [CVLM-Qwen](https://huggingface.co/Ghaser/CVLM-Qwen)
 
 After downloading checkpoints, organize the weights as follows.
