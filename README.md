@@ -226,7 +226,14 @@ If you find our paper and code useful in your research, please consider giving a
   year={2024}
 }
 ```
-
+```BibTex
+@article{li2023comprehensive,
+  title={A comprehensive evaluation of gpt-4v on knowledge-intensive visual question answering},
+  author={Li, Yunxin and Wang, Longyue and Hu, Baotian and Chen, Xinyu and Zhong, Wanqi and Lyu, Chenyang and Zhang, Min},
+  journal={arXiv preprint arXiv:2311.07536},
+  year={2023}
+}
+```
 
 ## Acknowledgments
 
