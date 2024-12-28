@@ -9,7 +9,7 @@ The evaluation dataset of the technical paper "A Comprehensive Evaluation of GPT
 
 We released two million Wikipedia Knowledge Datasets in [Wikipedia-Knowledge-2M](https://huggingface.co/datasets/Ghaser/Wikipedia-Knowledge-2M). The dataset includes a JSON file and a compressed archive containing all the image files. The JSON file's image attributes correspond to the compressed archive's image files.
 
-We have also provided the JSON file for the 504K KonwledgeQA dataset in [LLaVA-KnowledgeQA-504K](https://huggingface.co/datasets/Ghaser/LLaVA-KnowledgeQA-504K). The dataset mainly consists of the training sets from OK-VQA, TextVQA, A-OKVQA, and TextVQA. The images in this dataset come from [COCO Caption](https://cocodataset.org/#home) and [TextVQA](https://textvqa.org/), which you will need to download yourself.
+We have also provided the JSON file for the 504K KonwledgeQA dataset in [LLaVA-KnowledgeQA-504K](https://huggingface.co/datasets/Ghaser/LLaVA-KnowledgeQA-504K). The dataset mainly consists of the training sets from OK-VQA, A-OKVQA, and TextVQA. The images in this dataset come from [COCO Caption](https://cocodataset.org/#home) and [TextVQA](https://textvqa.org/), which you will need to download yourself.
 
 
 ## :mag: Environment
