@@ -1,7 +1,7 @@
 
 # Cognitive Visual-Language Mapper: Advancing Multimodal Comprehension with Enhanced Visual Knowledge Alignment
 
-<font size=2><div align='center' >  [[📖 arXiv Paper](https://arxiv.org/abs/2402.13561)] [[📊 Dataset ](https://huggingface.co/datasets/Ghaser/Wikipedia-Knowledge-2M)] </div></font>
+<font size=2><div align='center' >  [[📖 Paper Link](https://arxiv.org/abs/2402.13561)] [[📊 Dataset ](https://huggingface.co/datasets/Ghaser/Wikipedia-Knowledge-2M)] </div></font>
 
 ## :gift: Dataset
 
@@ -221,12 +221,23 @@ python eval_mm/evaluate_multiple_choice_generated.py --checkpoint checkpoints/CV
 If you find our paper and code useful in your research, please consider giving a star and citation
 
 ```BibTex
-@article{li2024cognitive,
-  title={Cognitive Visual-Language Mapper: Advancing Multimodal Comprehension with Enhanced Visual Knowledge Alignment},
-  author={Li, Yunxin and Chen, Xinyu and Hu, Baotian and Shi, Haoyuan and Zhang, Min},
-  journal={arXiv preprint arXiv:2402.13561},
-  year={2024}
+@inproceedings{li-etal-2024-cognitive,
+    title = "Cognitive Visual-Language Mapper: Advancing Multimodal Comprehension with Enhanced Visual Knowledge Alignment",
+    author = "Li, Yunxin  and
+      Chen, Xinyu  and
+      Hu, Baotian  and
+      Shi, Haoyuan  and
+      Zhang, Min",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.411/",
+    doi = "10.18653/v1/2024.acl-long.411",
+    pages = "7615--7626"
 }
+
 ```
 ```BibTex
 @article{li2023comprehensive,
