@@ -92,7 +92,7 @@ bash finetune/finetune_lora_ds.sh
 
 The sam_images on GitHub are incomplete; you need to re-download them from [Hugging Face](https://huggingface.co/datasets/Ghaser/CVLM-SAM-Images).
 
-We released the best model based on LLaVA on [CVLM-LLaVA](https://huggingface.co/Ghaser/CVLM-LLaVA) and the best model based on QWen-VL on [CVLM-Qwen](https://huggingface.co/Ghaser/CVLM-Qwen)
+We released the best model based on LLaVA on [CVLM-LLaVA](https://huggingface.co/Ghaser/CVLM-LLaVA), the best model based on QWen-VL on [CVLM-Qwen](https://huggingface.co/Ghaser/CVLM-Qwen) and pretrain OPT on [CVLM-Opt](https://huggingface.co/Ghaser/CVLM-Opt-pretrain)
 
 After downloading checkpoints, organize the weights as follows.
 
