@@ -153,7 +153,7 @@ def eval_model(args):
             print("error: SAM Image is None")
         
         # sam_images = sam_images.to(device='cuda', non_blocking=True)
-        if "sam" in model_path and "opt_knowledge" in model_path and "qformer" in model_path:
+        if "fka" in model_path.lower() or "cvlm-llava" in model_path.lower():
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
@@ -168,7 +168,7 @@ def eval_model(args):
                     num_beams=args.num_beams,
                     max_new_tokens=args.max_new_tokens,
                     use_cache=True)
-        elif "opt_knowledge" in model_path:
+        elif "vka" in model_path.lower():
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
